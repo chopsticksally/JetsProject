@@ -7,51 +7,8 @@ public class JetsApplication {
 	static Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Jets jets[] = new Jets[20];
-		Airfield airfield = new Airfield();
-		jets = airfield.createAirfield();
-		while (true) {
-			System.out.println("1. List fleet");
-			System.out.println("2. Fly all jets");
-			System.out.println("3. View fast jet");
-			System.out.println("4. View jet with longest range");
-			System.out.println("5. Load all cargo jets");
-			System.out.println("6. Dogfight!");
-			System.out.println("7. Add a jet to flight");
-			System.out.println("8. Quit");
-			int ans = kb.nextInt();
-			if (ans == 1) {
-				listFleet(jets);
-			}
-			if (ans == 2) {
-				fly(jets);
-			}
-			if (ans == 3) {
-				fastestJet(jets);
 
-			}
-			if (ans == 4) {
-				longestRangeJet(jets);
-			}
-			if (ans == 5) {
-				loadCargo(jets);// the load cargo method just prints out
-				// cargo being loaded
-			}
-			if (ans == 6) {
-				fight(jets);
-			}
-			if (ans == 7) {
-				airfield.addJet(addJet(jets), jets);// asks user for jet info and stores it in the array
-			}
-			if (ans == 8) {
-				System.out.println("GOODBYE");
-				break;
-			}
-		}
-		//
-		//
-		//
-		kb.close();
+		launch();
 	}
 
 	public static void listFleet(Jets[] jets) {
@@ -128,4 +85,53 @@ public class JetsApplication {
 		JetImpl newJet = new JetImpl(model, speed, range, price);
 		return newJet;
 	}
+
+	private static void launch() {
+		Jets jets[] = new Jets[20];
+		Airfield airfield = new Airfield();
+		jets = airfield.createAirfield();
+		while (true) {
+			System.out.println("1. List fleet");
+			System.out.println("2. Fly all jets");
+			System.out.println("3. View fast jet");
+			System.out.println("4. View jet with longest range");
+			System.out.println("5. Load all cargo jets");
+			System.out.println("6. Dogfight!");
+			System.out.println("7. Add a jet to flight");
+			System.out.println("8. Quit");
+			int ans = kb.nextInt();
+			if (ans == 1) {
+				listFleet(jets);
+			}
+			if (ans == 2) {
+				fly(jets);
+			}
+			if (ans == 3) {
+				fastestJet(jets);
+
+			}
+			if (ans == 4) {
+				longestRangeJet(jets);
+			}
+			if (ans == 5) {
+				loadCargo(jets);// the load cargo method just prints out
+				// cargo being loaded
+			}
+			if (ans == 6) {
+				fight(jets);
+			}
+			if (ans == 7) {
+				airfield.addJet(addJet(jets), jets);// asks user for jet info and stores it in the array
+			}
+			if (ans == 8) {
+				System.out.println("GOODBYE");
+				break;
+			}
+		}
+		//
+		//
+		//
+		kb.close();
+	}
+
 }
