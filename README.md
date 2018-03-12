@@ -19,4 +19,4 @@
 3. for Dogfight and load cargo menu options i had to identify the appropriate class of jet and cast that entry in the array so that the method could be called.
 4. using arrays as arguments, parameters and returns was super challenging.
 5. i added the speedInMach method but didnt see where it was going to be used so i never called it.
-6.Google is your friend!!! 
+6. Google is your friend!!! 
